@@ -1,31 +1,45 @@
 const connection = require('./database');
 
 const viewAllDepartments = () => {
-  // Perform SELECT query to fetch all departments and display them
+  connection.query('SELECT * FROM department', (err, results) => {
+    if (err) throw err;
+    console.table(results); // Display results in a formatted table
+  });
 };
 
 const viewAllRoles = () => {
-  // Perform SELECT query to fetch all roles and display them
+  connection.query('SELECT * FROM role', (err, results) => {
+    if (err) throw err;
+    console.table(results); // Display results in a formatted table
+  });
 };
 
 const viewAllEmployees = () => {
-  // Perform SELECT query to fetch all employees and display them
+  connection.query('SELECT * FROM employee', (err, results) => {
+    if (err) throw err;
+    console.table(results); // Display results in a formatted table
+  });
 };
 
-const addDepartment = () => {
-  // Prompt user for department name and INSERT it into the database
+const addDepartment = (departmentName) => {
+  connection.query('INSERT INTO department (name) VALUES (?)', [departmentName], (err, results) => {
+    if (err) throw err;
+    console.log('Department added successfully');
+  });
 };
 
-const addRole = () => {
-  // Prompt user for role details and INSERT it into the database
+const addRole = (title, salary, departmentId) => {
+  connection.query('INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)', [title, salary, departmentId], (err, results) => {
+    if (err) throw err;
+    console.log('Role added successfully');
+  });
 };
 
-const addEmployee = () => {
-  // Prompt user for employee details and INSERT it into the database
-};
-
-const updateEmployeeRole = () => {
-  // Prompt user to select an employee and their new role, then UPDATE it in the database
+const addEmployee = (firstName, lastName, roleId, managerId) => {
+  connection.query('INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)', [firstName, lastName, roleId, managerId], (err, results) => {
+    if (err) throw err;
+    console.log('Employee added successfully');
+  });
 };
 
 module.exports = {
@@ -34,6 +48,5 @@ module.exports = {
   viewAllEmployees,
   addDepartment,
   addRole,
-  addEmployee,
-  updateEmployeeRole
+  addEmployee
 };
