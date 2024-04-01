@@ -1,8 +1,14 @@
-// src/models/Department.js
+/**
+ * Represents a department in the application.
+ */
 class Department {
-    constructor(id, name) {
-      this.id = id;
-      this.name = name;
-    }
+  /**
+   * Creates a new Department instance.
+   * @param {number} id - The unique identifier for the department.
+   * @param {string} name - The name of the department.
+   */
+  constructor(id, name) {
+    this.id = id;
+    this.name = name;
   }
-  
+}

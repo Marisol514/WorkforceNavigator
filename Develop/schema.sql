@@ -1,4 +1,5 @@
 -- Create database if it doesn't exist
+DROP DATABASE IF EXISTS company_db;
 CREATE DATABASE IF NOT EXISTS company_db;
 
 -- Use the newly created database
