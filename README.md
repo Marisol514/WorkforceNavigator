@@ -51,7 +51,8 @@ run the application using node app.js:
 GitHub Link: 
 https://github.com/Marisol514/WorkforceNavigator
 
-Video Link: 
+Video Link: https://drive.google.com/file/d/1vsPBr85vfchs_LSRaV86VWiPMvc9bn3T/view 
+
 
 
 ## Rources: 
